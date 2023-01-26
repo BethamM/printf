@@ -13,7 +13,8 @@ int (*get_conversion(const char *c))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_integer},
-		{'i', print_integer}
+		{'i', print_integer},
+		{'b', print_binary}
 	};
 	unsigned int i = 0;
 	size_t n = sizeof(ops) / sizeof(ops[0]);
