@@ -53,5 +53,6 @@ int print_unsigned(va_list c);
 int print_octal(va_list c);
 int print_hexa(va_list c);
 int print_hexa_cap(va_list c);
+int print_address(va_list c);
 #endif /* #ifndef _MAIN_H_ */
 
