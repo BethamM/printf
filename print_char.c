@@ -10,5 +10,6 @@
 int print_char(va_list c)
 {
 	char ch = va_arg(c, int);
+
 	return (write(1, &ch, 1));
 }

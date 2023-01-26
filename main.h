@@ -39,5 +39,7 @@ int print_char(va_list c);
 int print_string(va_list c);
 
 int (*get_conversion(const char *c))(va_list);
+
+int print_cent(va_list c);
 #endif /* #ifndef _MAIN_H_ */
 
