@@ -13,14 +13,16 @@
  */
 int print_hexa(va_list args)
 {
-	int size, n;
+	int size, n, k;
 	char *buffer;
 
 	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
 		size = sprintf(buffer, "%x", n);
-	return (write(1, buffer, size));
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }
 
 /**
@@ -32,12 +34,14 @@ int print_hexa(va_list args)
  */
 int print_hexa_cap(va_list args)
 {
-	int size, n;
+	int size, n, k;
 	char *buffer;
 
 	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
 		size = sprintf(buffer, "%X", n);
-	return (write(1, buffer, size));
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }

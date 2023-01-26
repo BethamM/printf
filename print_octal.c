@@ -13,13 +13,15 @@
  */
 int print_octal(va_list args)
 {
-	int size, n;
+	int size, n, k;
 	char *buffer;
 
 	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
 		size = sprintf(buffer, "%o", n);
-	return (write(1, buffer, size));
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }
 

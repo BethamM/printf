@@ -14,7 +14,7 @@
  */
 int print_address(va_list args)
 {
-	int size;
+	int size, k;
 	char *buffer;
 
 	void *n = va_arg(args, void *);
@@ -22,6 +22,7 @@ int print_address(va_list args)
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
 		size = sprintf(buffer, "%p", n);
-	return (write(1, buffer, size));
-
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }

@@ -13,14 +13,16 @@
  */
 int print_integer(va_list args)
 {
-	int size, n;
+	int size, n, k;
 	char *buffer;
 
 	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
 		size = sprintf(buffer, "%d", n);
-	return (write(1, buffer, size));
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }
 
 /**
@@ -31,7 +33,7 @@ int print_integer(va_list args)
  */
 int print_unsigned(va_list args)
 {
-	unsigned int size, n;
+	unsigned int size, n, k;
 	char *buffer;
 
 	n = va_arg(args, unsigned int);
@@ -39,5 +41,7 @@ int print_unsigned(va_list args)
 
 	if (buffer != NULL)
 		size = sprintf(buffer, "%u", n);
-	return (write(1, buffer, size));
+	k = (write(1, buffer, size));
+	free(buffer);
+	return(k);
 }
