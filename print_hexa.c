@@ -5,13 +5,13 @@
 #include <stdio.h>
 
 /**
- * print_integer - prints an integer to stdout
+ * print_hexa - prints an integer in hexadecimal form to stdout
  * @args: variable to print
  *
  * Description: the integer is first converted to a string then printed
  * Return: number of characters printed
  */
-int print_integer(va_list args)
+int print_hexa(va_list args)
 {
 	int size, n;
 	char *buffer;
@@ -19,25 +19,25 @@ int print_integer(va_list args)
 	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
 	if (buffer != NULL)
-		size = sprintf(buffer, "%d", n);
+		size = sprintf(buffer, "%x", n);
 	return (write(1, buffer, size));
 }
 
 /**
- * print_unsigned - prints an unsigned int to stdout
+ * print_hexa_cap - prints an integer in hexadecimal form to stdout
  * @args: variable to print
  *
+ * Description: the integer is first converted to a string then printed
  * Return: number of characters printed
  */
-int print_unsigned(va_list args)
+int print_hexa_cap(va_list args)
 {
-	unsigned int size, n;
+	int size, n;
 	char *buffer;
 
-	n = va_arg(args, unsigned int);
+	n = va_arg(args, int);
 	buffer = malloc(sizeof(n) + 1);
-
 	if (buffer != NULL)
-		size = sprintf(buffer, "%u", n);
+		size = sprintf(buffer, "%X", n);
 	return (write(1, buffer, size));
 }

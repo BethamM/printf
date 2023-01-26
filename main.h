@@ -49,5 +49,9 @@ int print_integer(va_list c);
 int (*get_conversion(const char *c))(va_list);
 
 int print_binary(va_list types);
+int print_unsigned(va_list c);
+int print_octal(va_list c);
+int print_hexa(va_list c);
+int print_hexa_cap(va_list c);
 #endif /* #ifndef _MAIN_H_ */
 
