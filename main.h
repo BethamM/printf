@@ -38,6 +38,14 @@ int print_char(va_list c);
  */
 int print_string(va_list c);
 
+/**
+ * print_integer - prints a integer variable
+ * @c: variable to print
+ *
+ * Return: number of characters printed
+ */
+int print_integer(va_list c);
+
 int (*get_conversion(const char *c))(va_list);
 
 #endif /* #ifndef _MAIN_H_ */

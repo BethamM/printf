@@ -11,7 +11,9 @@ int (*get_conversion(const char *c))(va_list)
 {
 	printer ops[] = {
 		{'c', print_char},
-		{'s', print_string}
+		{'s', print_string},
+		{'d', print_integer},
+		{'i', print_integer}
 	};
 	unsigned int i = 0;
 	size_t n = sizeof(ops) / sizeof(ops[0]);
